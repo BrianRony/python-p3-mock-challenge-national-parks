@@ -28,15 +28,6 @@ class NationalPark:
 
     def best_visitor(self):
         visitors = [trip.visitor for trip in self.trips()]
-        # VERSION 1
-        # counts = {visitor: visitors.count(visitor) for visitor in visitors}
-        # sorted_list = sorted(counts.items(), key=lambda pair: pair[1], reverse=True)
-        # return sorted_list[0][0]
-
-        # VERSION 2
-        # return Counter(visitors).most_common(1)[0][0]
-
-        # VERSION 3
         return max(set(visitors), key=visitors.count)
 
     @classmethod
